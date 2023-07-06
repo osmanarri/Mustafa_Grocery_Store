@@ -75,6 +75,7 @@
                 <input type="text" id="name" placeholder="your name" required>
                 <input type="email" id="email" placeholder="your email" required>
                 <input type="text" id="phone" placeholder="your phone" required>
+                <input type="text" id="address" placeholder="your address" required>
                 <textarea id="msg" rows="4" placeholder="How can we help you?"></textarea>
                 <button type="submit">Submit</button>
             </form>
@@ -103,6 +104,7 @@
                            + "<br> Email: " + document.getElementById("email").value
                            + "<br> Phone: " + document.getElementById("phone").value
                            + "<br> Message: " + document.getElementById("msg").value
+                           + "<br> Address: " + document.getElementById("address").value
                 }).then(
                 message => alert("Message Sent Successfully.")
                 );
