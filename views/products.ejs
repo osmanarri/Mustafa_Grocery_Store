@@ -1,0 +1,112 @@
+<%- include("partials/header") %>
+    
+    
+
+    <section class="container-fluid px-0">
+        <div class="row align-items-center content">
+            <div class="col-md-6 order-2 order-md-1">
+                <img src="/imgs/milk.png" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-6 text-center order-1 order-md-2">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                        <h2>Global Golden Foods</h2>
+                        <img src="/imgs/lolli_icon.png" alt="" class="d-none d-lg-inline">
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, iste molestiae
+                            beatae, maiores deserunt
+                            in voluptatibus
+                            aspernatur architecto excepturi delectus soluta? Ipsa, deleniti dolorem hic consequatur
+                            repellat eveniet quidem
+                            voluptate necessitatibus dolorum delectus minus vitae, ut, veritatis sint ipsum magnam
+                            autem nam ex deserunt debitis
+                            eaque ratione! Nobis, quidem assumenda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center content">
+            <div class="col-md-6 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                        <h2>Global Golden Foods</h2>
+                        <img src="/imgs/lolli_icon.png" alt="" class="d-none d-lg-inline">
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, iste molestiae
+                            beatae, maiores deserunt
+                            in voluptatibus
+                            aspernatur architecto excepturi delectus soluta? Ipsa, deleniti dolorem hic consequatur
+                            repellat eveniet quidem
+                            voluptate necessitatibus dolorum delectus minus vitae, ut, veritatis sint ipsum magnam
+                            autem nam ex deserunt debitis
+                            eaque ratione! Nobis, quidem assumenda.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="/imgs/gumball.png" alt="" class="img-fluid">
+            </div>
+        </div>
+        <div class="row align-items-center content">
+            <div class="col-md-6 order-2 order-md-1">
+                <img src="/imgs/sprinkles.png" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-6 text-center order-1 order-md-2">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                        <h2>Global Golden Foods</h2>
+                        <img src="/imgs/lolli_icon.png" alt="" class="d-none d-lg-inline">
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, iste molestiae
+                            beatae, maiores
+                            deserunt
+                            in voluptatibus
+                            aspernatur architecto excepturi delectus soluta? Ipsa, deleniti dolorem hic consequatur
+                            repellat eveniet
+                            quidem
+                            voluptate necessitatibus dolorum delectus minus vitae, ut, veritatis sint ipsum magnam
+                            autem nam ex deserunt
+                            debitis
+                            eaque ratione! Nobis, quidem assumenda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h3>Place Your Order</h3>
+                <input type="text" id="name" placeholder="your name" required>
+                <input type="email" id="email" placeholder="your email" required>
+                <input type="text" id="phone" placeholder="your phone" required>
+                <textarea id="msg" rows="4" placeholder="How can we help you?"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        
+        </div>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            function sendEmail(){
+                // Email.send({
+                //     SecureToken : "4093268-b25b-4e6e-aaa8-d9ea9d638821",
+                //     To : 'osmanarri1984@gmail.com',
+                //     From : "osmanarri1984@gmail.com",
+                //     Subject : "New Order",
+                //     Body : "And this is the body"
+                // }).then(
+                // message => alert(message)
+                // );
+                Email.send({
+                    Host : "smtp.elasticemail.com",
+                    Username : "osmanarri1984@gmail.com",
+                    Password : "C8801B1D49995A59379C55DDD961A564A3F9",
+                    To : 'osmanarri1984@gmail.com',
+                    From : "osmanarri1984@gmail.com",
+                    Subject : "This is the subject",
+                    Body : "Name" + document.getElementById("name").value 
+                           + "<br> Email: " + document.getElementById("email").value
+                           + "<br> Phone: " + document.getElementById("phone").value
+                           + "<br> Message: " + document.getElementById("msg").value
+                }).then(
+                message => alert("Message Sent Successfully.")
+                );
+            }
+        </script>
+    </section>
+<%- include("partials/footer") %>
